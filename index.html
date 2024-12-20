@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUZNA</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #dcdcdc; /* لون رمادي فاتح */
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+        header {
+            background: #8c8c8c; /* رمادي داكن */
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 2.8rem;
+            font-weight: bold;
+            border-bottom: 4px solid #ff6f91;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        header:hover {
+            background: #ff6f91; /* يتحول إلى اللون الوردي عند التفاعل */
+        }
+        header .emoji {
+            font-size: 2.5rem;
+            margin-left: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 40px;
+            background: #f5f5f5; /* لون رمادي فاتح */
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.03);
+        }
+        .container h1 {
+            color: #ff3366;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: fadeIn 2s;
+        }
+        .container p {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 25px;
+            animation: slideIn 2s;
+            text-align: justify;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.3rem;
+            background-color: #bfbfbf; /* اللون الرمادي */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.4s, transform 0.2s;
+            animation: bounce 2s infinite alternate;
+        }
+        .button.clicked {
+            background-color: #ff6f91; /* اللون الوردي عند النقر */
+        }
+        .button:hover {
+            background-color: #ff1f4d;
+            transform: scale(1.1);
+        }
+        .icons {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 40px 0;
+        }
+        .icon {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 15px;
+            color: #8c8c8c; /* اللون الرمادي */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .icon:hover {
+            transform: translateY(-10px);
+            color: #ff6f91; /* يتحول إلى اللون الوردي عند التفاعل */
+        }
+        .icon p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            background-color: #8c8c8c; /* الرمادي الداكن */
+            border-radius: 15px;
+            transition: background-color 1s, color 1s; /* إضافة تأثير التدرج */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        MUZNA <span class="emoji">🎀</span>
+    </header>
+
+    <div class="container">
+        <h1>إلى معلمتي الرائعة مزنة</h1>
+        <p>مرحبًا بكِ في هذا الموقع المميز، المخصص لك معلمتي الغالية مزنة. أنتِ منارة النور التي تلهم الجميع. مهما حاولنا التعبير بالكلمات، فكل كلمة هي جزء صغير من حبنا وتقديرنا الكبير لكِ. هذا الموقع هو محاولة بسيطة لتكريمك، فأنتِ أروع من أن تُوصف الكلمات. </p>
+        <a href="#" class="button" id="discoverButton">اكتشفي المزيد عنك...</a>
+
+        <div class="icons">
+            <div class="icon">
+                🌸
+                <p>جمالكِ مثل الزهور، لا يفنى أبدًا!</p>
+            </div>
+            <div class="icon">
+                ✨
+                <p>إشراقتكِ كالسحر، تجعل الجميع يبتسمون!</p>
+            </div>
+            <div class="icon">
+                📚
+                <p>أنتِ معلمة مميزة علمتينا الكثير من دروس الحياة!</p>
+            </div>
+            <div class="icon">
+                ❤️
+                <p>أنتِ القلب الكبير الذي لا يتوقف عن العطاء!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        صُنع بحب 💕 لأنكِ تستحقين كل الحب والاحترام!
+    </div>
+
+    <script>
+        // تغيير اللون عند النقر على الزر
+        document.querySelector('#discoverButton').addEventListener('click', function() {
+            this.classList.add('clicked');
+            alert('هل تعلمين أنه أصبح  لديكِ موقع خاص فيكِ؟ ها هو الآن بين يديكِ، وكأن الخيال أصبح واقعًا! 😄✨');
+        });
+
+        // تغيير لون العنوان عند التمرير
+        window.addEventListener('scroll', function() {
+            console.log('تم التمرير في الصفحة');
+            const header = document.querySelector('header');
+            header.style.backgroundColor = '#ff6f91'; // عند التمرير يتحول اللون إلى الوردي
+            document.body.style.backgroundColor = '#f5f5f5'; // عند التمرير يتحول خلفية الموقع إلى الرمادي الفاتح
+
+            // تغيير اللون التدريجي للعنصر الأخير
+            const footer = document.querySelector('.footer');
+            const footerPosition = footer.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (footerPosition < windowHeight) {
+                footer.style.backgroundColor = '#ff6f91';  // يتحول اللون إلى الوردي
+                footer.style.color = '#fff';  // يجعل النص أبيض
+            }
+        });
+
+        // تتبع تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('تم تحميل الصفحة بالكامل');
+        });
+    </script>
+</body>
+</html>
